@@ -1,0 +1,17 @@
+
+<div ng-controller="TeamsController as TC">
+	<form>
+		Name: <input type="text" ng-model="TC.newTeam.name">
+		<input type="submit" value="Add Team" ng-click="TC.addTeam(TC.newTeam)">
+	</form>
+	<table ng-init="TC.getTeams()">
+		<tr>
+			<th>Name</th>
+			<th>Actions</th>
+		</tr>
+		<tr ng-repeat="team in TC.teams track by $index">
+			<td>{{team.name}}</td>
+			<td><button ng-click="TC.destroyTeam(team)">Delete Team</button></td>
+		</tr>
+	</table>
+</div>

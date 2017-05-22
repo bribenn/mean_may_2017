@@ -1,0 +1,18 @@
+
+<div ng-controller="PlayersController as PC">
+	<form>
+		Name: <input type="text" ng-model="PC.newPlayer.name">
+		<input type="hidden" ng-model="PC.newPlayer.team">
+		<input type="submit" value="Add Player" ng-click="PC.addPlayer(PC.newPlayer)">
+	</form>
+	<table ng-init="PC.getPlayers()">
+		<tr>
+			<th>Name</th>
+			<th>Actions</th>
+		</tr>
+		<tr ng-repeat="player in PC.players track by $index">
+			<td>{{player.name}}</td>
+			<td><button ng-click="PC.destroyPlayer(player)">Delete Player</button></td>
+		</tr>
+	</table>
+</div>
