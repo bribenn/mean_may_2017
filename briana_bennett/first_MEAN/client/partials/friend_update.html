@@ -4,13 +4,13 @@
 		<h4>Current Info:</h4>
 		<p>First Name: {{ FC.friend.first_name }}</p>
 		<p>Last Name: {{ FC.friend.last_name }}</p>
-		<p>Birthday: {{ FC.friend.birthday | date: yyyy-MM-dd}}</p>
+		<p>Birthday: {{ FC.friend.birthday | date: 'yyyy-MM-dd'}}</p>
 	</div>
 
 	<form ng-submit="FC.update(FC.updatedFriend)">
 		First Name:<input type="text" ng-value="FC.friend.first_name" ng-model="FC.updatedFriend.first_name">
 		Last Name:<input type="text" ng-value="FC.friend.last_name" ng-model="FC.updatedFriend.last_name">
-		Birthday:<input type="date" ng-value="FC.friend.birthday | date: yyyy-MM-dd" ng-model="FC.updatedFriend.birthday">
+		Birthday:<input type="date" ng-value="FC.friend.birthday | date:'yyyy-MM-dd'" ng-model="FC.updatedFriend.birthday">
 		<input type="submit" value="Update Friend">
 	</form>
 </div>
