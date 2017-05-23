@@ -1,0 +1,9 @@
+<div>
+	<form ng-submit="FC.create(FC.newFriend)">
+		First Name:<input type="text" ng-model="FC.newFriend.first_name">
+		Last Name:<input type="text" ng-model="FC.newFriend.last_name">
+		Birthday:<input type="date" ng-model="FC.newFriend.birthday">
+		<input type="submit" value="Create Friend">
+	</form>
+	<p class="errors" ng-repeat="error in FC.errors">{{error}}</p>
+</div>
